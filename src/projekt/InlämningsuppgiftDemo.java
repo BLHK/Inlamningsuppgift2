@@ -26,10 +26,10 @@ public class InlämningsuppgiftDemo {
          
         LocalDate now = LocalDate.now();
         LocalDate yearAgo = now.minusYears(1).minusDays(1);
-        System.out.println(yearAgo);
+        
          
          
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
          
         Path outFilePath = Paths.get("src\\inlämningsuppgift2\\Utskrift.txt");
          
@@ -56,7 +56,7 @@ public class InlämningsuppgiftDemo {
                          
                         if(användarDatum.isAfter(yearAgo)) {
                             System.out.println("Du får komma in!");
-
+                             
                              
                             FileWriter fw = new FileWriter("src\\inlämningsuppgift2\\Utskrift.txt", true);
                             BufferedWriter bw = new BufferedWriter(fw);
@@ -65,17 +65,17 @@ public class InlämningsuppgiftDemo {
                             out.println(now);
                             out.close();
                              
+                             
                         }else {
-                            //System.out.println("Ditt medlemskap är slut.");
+                            System.out.println("Ditt medlemskap är slut.");
                         }
-                    }else {
-                    	System.out.println("Ditt medlemskap är slut.");
                     }
                 }
+                 
             }
         }
         catch (Exception e){
-            System.out.println("Could not read from file");
+            //System.out.println("asd");
         }
     }
 }
